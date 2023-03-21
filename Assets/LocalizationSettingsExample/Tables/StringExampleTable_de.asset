@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringExampleTable_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: ddd08aeba35ac4dfa8b7175e72924168, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 34924912640
+    m_Localized: Holla Uno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1345879793664
+    m_Localized: Holla Uno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094039746109440
+    m_Localized: "Sprachen ausw\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1096155428544512
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1096568278081536
+    m_Localized: weitermachen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1097195943092224
+    m_Localized: GEGEN COMPUTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1097629332135936
+    m_Localized: GEGEN MEHRSPIELER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1098755267878912
+    m_Localized: PROFILEINSTELLUNGEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1099439337889792
+    m_Localized: "PROFILBILD W\xC4HLEN"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
