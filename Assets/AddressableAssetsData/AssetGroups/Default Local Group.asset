@@ -21,10 +21,6 @@ MonoBehaviour:
     m_Address: Fonts & Materials/ClimateCrisis-Regular-VariableFont_YEAR
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 55bb3ca7ad7d64ba4abbe820bc169ce1
-    m_Address: Assets/Uno/Graphics/GUI/blue-red-neon-light-frame-box-background 1.zip
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c048976d8a3f748f9b9c9954fa7226fc, type: 2}
   m_SchemaSet:
