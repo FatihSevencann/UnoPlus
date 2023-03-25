@@ -100,7 +100,7 @@ public class HomeScene : MonoBehaviour
         //     });
         //     toggleLanguage.Add(temp);
         // }
-        UpdateLanguage();
+        //UpdateLanguage();
     }
 
     void UpdateUI()
@@ -112,11 +112,11 @@ public class HomeScene : MonoBehaviour
 
     }
 
-    void UpdateLanguage()
-    {
-        languageFlag.sprite = Resources.Load<Sprite>("Flags/" + GameManager.LanguageIndex);
-        languageName.text = GameManager.LanguageName;
-    }
+    // void UpdateLanguage()
+    // {
+    //     languageFlag.sprite = Resources.Load<Sprite>("Flags/" + GameManager.LanguageIndex);
+    //     languageName.text = GameManager.LanguageName;
+    // }
     public void ShowProfileChooser()
     {
         avatarSetting.SetActive(true);
@@ -150,7 +150,7 @@ public class HomeScene : MonoBehaviour
     {
         GameManager.IsFirstOpen = false;
         languangeSetting.SetActive(false);
-        UpdateLanguage();
+        //UpdateLanguage();
         GameManager.PlayButton();
     }
 
