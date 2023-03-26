@@ -50,7 +50,11 @@ public class GamePlayManager : MonoBehaviour
     private List<Card> wasteCards;
     private Player playerText;
 
+    public GameObject Human;
     
+
+
+ 
 
     public CardType CurrentType
     {
@@ -220,9 +224,24 @@ public class GamePlayManager : MonoBehaviour
             }
         }
     }
-
+        
+    // public void CardRotation()
+    // {
+    //     float aciAraligi = Mathf.Clamp((maxAci - minAci) / (kartSayisi - 1), 0, 180); // Açı aralığını hesapla
+    //
+    //     for (int i = 0; i < cards.Count; i++)
+    //     {
+    //         float aci = i * aciAraligi + minAci;
+    //         aci = Mathf.Clamp(aci, -65, 65);
+    //
+    //         Vector3 pozisyon = new Vector3(Mathf.Sin(aci * Mathf.Deg2Rad), 0, Mathf.Cos(aci * Mathf.Deg2Rad)) * yaricap;
+    //         GameObject kart = Instantiate(kartPrefab, pozisyon, Quaternion.identity, transform);
+    //         kart.transform.LookAt(transform.position);
+    //     }
+    // }
     Card CreateCardOnDeck(CardType t, CardValue v)
     {
+     
         Card temp = Instantiate(_cardPrefab, cardDeckTransform.position, Quaternion.identity, cardDeckTransform);
         temp.Type = t;
         temp.Value = v;

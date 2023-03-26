@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         Timer = false;
+
+        timerImage.fillAmount = 1f;
     }
 
     public void SetAvatarProfile(AvatarProfile p)
@@ -87,6 +89,34 @@ public class Player : MonoBehaviour
             {
                 OnTurnEnd();
             }
+        }
+        else if (timerImage.fillAmount <= 1f && timerImage.fillAmount > 0.675f)
+        {
+           
+            timerImage.sprite = Resources.Load<Sprite>("TimerBars/" + 0);
+            timerOjbect.transform.GetChild(0).gameObject.SetActive(true);
+            timerOjbect.transform.GetChild(1).gameObject.SetActive(false);
+            timerOjbect.transform.GetChild(2).gameObject.SetActive(false);
+            
+            timerImage.color = Color.green;
+        }
+        else if (timerImage.fillAmount <= 0.675 && timerImage.fillAmount > 0.345f)
+        {
+            timerImage.sprite = Resources.Load<Sprite>("TimerBars/" + 1);
+            timerImage.color = Color.yellow;
+            timerOjbect.transform.GetChild(0).gameObject.SetActive(false);
+            timerOjbect.transform.GetChild(1).gameObject.SetActive(true);
+            timerOjbect.transform.GetChild(2).gameObject.SetActive(false);
+          
+        }
+        else if (timerImage.fillAmount <=0.345f && timerImage.fillAmount > 0)
+        {
+            timerImage.sprite = Resources.Load<Sprite>("TimerBars/" + 2);
+            timerImage.color = Color.red;
+            timerOjbect.transform.GetChild(0).gameObject.SetActive(false);
+            timerOjbect.transform.GetChild(1).gameObject.SetActive(false);
+            timerOjbect.transform.GetChild(2).gameObject.SetActive(true);
+          
         }
     }
 
