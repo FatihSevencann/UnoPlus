@@ -39,11 +39,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1097195943092224
-    m_Localized: "B\u0130LG\u0130SAYARA KAR\u015EI"
+    m_Localized: Bilgisayara Karsi
     m_Metadata:
       m_Items: []
   - m_Id: 1097629332135936
-    m_Localized: "\xC7OK OYUNCULUYA KAR\u015EI"
+    m_Localized: Oyuncuya Karsi
     m_Metadata:
       m_Items: []
   - m_Id: 1098755267878912

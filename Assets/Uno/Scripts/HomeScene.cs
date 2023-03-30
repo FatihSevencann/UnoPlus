@@ -45,12 +45,14 @@ public class HomeScene : MonoBehaviour
     void SetupUI()
     {
         soundToggle.isOn = GameManager.IsSound;
-
+        
         soundToggle.onValueChanged.RemoveAllListeners();
         soundToggle.onValueChanged.AddListener((arg0) =>
         {
             GameManager.PlayButton();
             GameManager.IsSound = arg0;
+            soundToggle.gameObject.SetActive(arg0);
+            
         });
 
         toggleList = new List<Toggle>();
@@ -81,6 +83,7 @@ public class HomeScene : MonoBehaviour
         {
             GameManager.PlayButton();
             GameManager.IsSound = arg0;
+            
         });
 
         // toggleLanguage = new List<Toggle>();

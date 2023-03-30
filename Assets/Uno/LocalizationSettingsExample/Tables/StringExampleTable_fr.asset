@@ -39,11 +39,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1097195943092224
-    m_Localized: VS ORDINATEUR
+    m_Localized: Contre l'ordinateur
     m_Metadata:
       m_Items: []
   - m_Id: 1097629332135936
-    m_Localized: VS MULTIJOUEUR
+    m_Localized: Contre multijoueur
     m_Metadata:
       m_Items: []
   - m_Id: 1098755267878912
