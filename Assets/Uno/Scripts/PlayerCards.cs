@@ -2,15 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.UI;
+using UnityEngine.UI;
 
 [ExecuteInEditMode]
 public class PlayerCards : MonoBehaviour
 {
-    public float maxSpace;
+    [SerializeField] float maxSpace;
     public Vector2 cardSize;
     public List<Card> cards;
     private Player player;
-    public float aciAraligi;
+    private float Momentum;
+    
+  
 
     public GameObject WhichGrid;
     // Kartların arasındaki açı
@@ -103,28 +107,20 @@ public class PlayerCards : MonoBehaviour
             if (!UnityEditor.EditorApplication.isPlaying)
             {
                 if (player.isUserPlayer)
-                {
-                    float aci = (i - (cards.Count - 1) / 2f) * aciAraligi;
-
-
                     cards[i].transform.position = new Vector3(start, yPos, 0);
-                    cards[i].transform.rotation = Quaternion.Euler(0f, 0f, -aci);
-                }
             }
-
             else
             {
-                float aci = (i - (cards.Count - 1) / 2f) * aciAraligi;
-                if (WhichGrid.CompareTag("Human")) 
-                    cards[i].transform.localPosition = new Vector3(start,  i<=(cards.Count-1)/2 ? yPos: yPosLast,0f ); 
-                
+                float Angle = (i - (cards.Count - 1) / 2f) * Momentum;
+                if (WhichGrid.CompareTag("Human"))
+                    cards[i].transform.localPosition =
+                        new Vector3(start, i <= (cards.Count - 1) / 2 ? yPos : yPosLast, 0f);
+
                 else
                 {
                     cards[i].transform.localPosition = new Vector3(start, 0, 0f);
                 }
-
-
-                cards[i].transform.rotation = Quaternion.Euler(0, 0f, -aci);
+                cards[i].transform.rotation = Quaternion.Euler(0, 0f, -Angle);
             }
 #else
 			cards [i].SetTargetPosAndRot(new Vector3 (start, 0f,0f),0f);
@@ -132,7 +128,6 @@ public class PlayerCards : MonoBehaviour
             start += space;
         }
     }
-
     public int GetCount(CardType t)
     {
         List<Card> temp = cards.FindAll((obj) => obj.Type == t);

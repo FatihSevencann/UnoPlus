@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
@@ -15,19 +17,26 @@ public class Player : MonoBehaviour
     public ParticleSystem starParticleSystem;
     public Image timerImage;
     public GameObject timerOjbect;
+    [SerializeField] private Text _scoreText;
+    [SerializeField] private int leftCards = 0;
+    [SerializeField] private ParticleSystem Fx;
+    [SerializeField] private RectTransform fxTransfrom;
+    private Vector3 xpos;
+    [SerializeField] private Color[] particleColors;
+
 
     private float totalTimer = 15f;
+    [HideInInspector] public bool pickFromDeck, unoClicked, choosingColor;
+    [HideInInspector] public bool isInRoom = true;
 
-    [HideInInspector]
-    public bool pickFromDeck, unoClicked, choosingColor;
-    [HideInInspector]
-    public bool isInRoom = true;
 
     void Start()
     {
         Timer = false;
-
         timerImage.fillAmount = 1f;
+        leftCards = 0;
+       
+        xpos = fxTransfrom.transform.position;
     }
 
     public void SetAvatarProfile(AvatarProfile p)
@@ -38,16 +47,14 @@ public class Player : MonoBehaviour
             avatarName.text = p.avatarName;
             avatarName.GetComponent<EllipsisText>().UpdateText();
         }
+
         if (avatarImage != null)
             avatarImage.sprite = Resources.Load<Sprite>("Avatar/" + p.avatarIndex);
     }
 
     public bool Timer
     {
-        get
-        {
-            return timerOjbect.activeInHierarchy;
-        }
+        get { return timerOjbect.activeInHierarchy; }
         set
         {
             CancelInvoke("UpdateTimer");
@@ -66,7 +73,10 @@ public class Player : MonoBehaviour
 
     void UpdateTimer()
     {
-        timerImage.fillAmount -= 0.1f / totalTimer;
+        timerImage.fillAmount -= 0.07f / totalTimer;
+        fxTransfrom.Translate(-0.0080f, 0f, 0f);
+
+
         if (timerImage.fillAmount <= 0)
         {
             if (choosingColor)
@@ -75,6 +85,7 @@ public class Player : MonoBehaviour
                 {
                     GamePlayManager.instance.colorChoose.HidePopup();
                 }
+
                 ChooseBestColor();
             }
             else if (GamePlayManager.instance.IsDeckArrow)
@@ -92,31 +103,32 @@ public class Player : MonoBehaviour
         }
         else if (timerImage.fillAmount <= 1f && timerImage.fillAmount > 0.675f)
         {
-           
+            Fx.startColor = particleColors[0];
             timerImage.sprite = Resources.Load<Sprite>("TimerBars/" + 0);
             timerOjbect.transform.GetChild(0).gameObject.SetActive(true);
             timerOjbect.transform.GetChild(1).gameObject.SetActive(false);
             timerOjbect.transform.GetChild(2).gameObject.SetActive(false);
-            
+
             timerImage.color = Color.green;
         }
         else if (timerImage.fillAmount <= 0.675 && timerImage.fillAmount > 0.345f)
+
         {
+            Fx.startColor = particleColors[1];
             timerImage.sprite = Resources.Load<Sprite>("TimerBars/" + 1);
             timerImage.color = Color.yellow;
             timerOjbect.transform.GetChild(0).gameObject.SetActive(false);
             timerOjbect.transform.GetChild(1).gameObject.SetActive(true);
             timerOjbect.transform.GetChild(2).gameObject.SetActive(false);
-          
         }
-        else if (timerImage.fillAmount <=0.345f && timerImage.fillAmount > 0)
+        else if (timerImage.fillAmount <= 0.345f && timerImage.fillAmount > 0)
         {
+            Fx.startColor = particleColors[2];
             timerImage.sprite = Resources.Load<Sprite>("TimerBars/" + 2);
             timerImage.color = Color.red;
             timerOjbect.transform.GetChild(0).gameObject.SetActive(false);
             timerOjbect.transform.GetChild(1).gameObject.SetActive(false);
             timerOjbect.transform.GetChild(2).gameObject.SetActive(true);
-          
         }
     }
 
@@ -138,6 +150,9 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(DoComputerTurn());
         }
+
+        fxTransfrom.transform.position = xpos;
+        print("konum" + fxTransfrom.position);
     }
 
     public void UpdateCardColor()
@@ -149,12 +164,14 @@ public class Player : MonoBehaviour
                 item.SetGaryColor(false);
                 item.IsClickable = true;
             }
+
             foreach (var item in cardsPanel.DisallowedCard)
             {
                 item.SetGaryColor(true);
 
                 item.IsClickable = false;
             }
+
             if (cardsPanel.AllowedCard.Count > 0 && cardsPanel.cards.Count == 2)
             {
                 GamePlayManager.instance.EnableUnoBtn();
@@ -175,6 +192,10 @@ public class Player : MonoBehaviour
             c.onClick = OnCardClick;
             c.IsClickable = false;
         }
+
+        leftCards++;
+
+        _scoreText.text = leftCards.ToString();
     }
 
     public void RemoveCard(Card c)
@@ -182,6 +203,8 @@ public class Player : MonoBehaviour
         cardsPanel.cards.Remove(c);
         c.onClick = null;
         c.IsClickable = false;
+        leftCards--;
+        _scoreText.text = leftCards.ToString();
     }
 
     public void OnCardClick(Card c)
@@ -292,10 +315,11 @@ public class Player : MonoBehaviour
     public int GetTotalPoints()
     {
         int total = 0;
-        foreach(var c in cardsPanel.cards)
+        foreach (var c in cardsPanel.cards)
         {
             total += c.point;
         }
+
         return total;
     }
 }

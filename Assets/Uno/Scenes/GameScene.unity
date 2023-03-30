@@ -257,7 +257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 17.000122, y: -0.6949463}
+  m_AnchoredPosition: {x: 17.000244, y: -0.6949463}
   m_SizeDelta: {x: 0, y: -1.3900146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &86037641
@@ -5474,6 +5474,14 @@ MonoBehaviour:
   starParticleSystem: {fileID: 1938185179}
   timerImage: {fileID: 86037643}
   timerOjbect: {fileID: 1174487135}
+  _scoreText: {fileID: 775755728}
+  leftCards: 7
+  Fx: {fileID: 946832351}
+  fxTransfrom: {fileID: 946832349}
+  particleColors:
+  - {r: 0.38039216, g: 0.9843137, b: 0.32156864, a: 1}
+  - {r: 0.94509804, g: 0.9607843, b: 0.5686275, a: 1}
+  - {r: 0.94509804, g: 0.30588236, b: 0.28235295, a: 1}
   pickFromDeck: 0
   unoClicked: 0
   choosingColor: 0
@@ -5685,9 +5693,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 525378198}
-  - {fileID: 1720348326}
-  - {fileID: 1519604161}
   - {fileID: 508633654}
+  - {fileID: 1519604161}
+  - {fileID: 1720348326}
   - {fileID: 858389340}
   - {fileID: 554235828}
   - {fileID: 84415713}
@@ -5761,8 +5769,8 @@ MonoBehaviour:
   uno_btn_clip: {fileID: 8300000, guid: 49494aa86806ab64dbd0848d780a8a4c, type: 3}
   choose_color_clip: {fileID: 8300000, guid: 49494aa86806ab64dbd0848d780a8a4c, type: 3}
   LeftRoomProbability: 10
-  UnoProbability: 70
-  LowercaseNameProbability: 30
+  UnoProbability: 58
+  LowercaseNameProbability: 65
   cardDealTime: 0.05
   _cardPrefab: {fileID: 114756711530414106, guid: e67b06ab6c5e47543b7e3c0ab65c8369,
     type: 3}
@@ -6025,7 +6033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 342.64, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.68, y: -0.00035476685}
+  m_AnchoredPosition: {x: 69.7, y: -0.00035476685}
   m_SizeDelta: {x: 10.38, y: 4.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &167640388
@@ -6049,7 +6057,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb1930c67e2e44988b21c0822ec41563, type: 2}
+  - {fileID: 2100000, guid: 2e279c927b297473e84f720a18dfd892, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6183,7 +6191,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3.06
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6290,7 +6298,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.28144264, g: 1, b: 0, a: 1}
+      maxColor: {r: 0.38039216, g: 0.9843137, b: 0.32156864, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6352,8 +6360,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 2.5
+      scalar: 2.77
+      minScalar: 1.73
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6728,7 +6736,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 19
     angle: 29.59
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -6737,7 +6745,7 @@ ParticleSystem:
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
-    placementMode: 0
+    placementMode: 1
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
     m_MeshSpawn:
@@ -6934,7 +6942,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6987,7 +6995,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 120
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10842,8 +10850,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19, y: 1.065}
-  m_SizeDelta: {x: 121.58, y: 43.23}
+  m_AnchoredPosition: {x: -16.58, y: 1.065}
+  m_SizeDelta: {x: 126.42, y: 43.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &170943844
 MonoBehaviour:
@@ -10867,7 +10875,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ecafadc9f9d914c2b8ded2dc2340e407, type: 3}
-    m_FontSize: 19
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -11805,8 +11813,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19, y: 1.065}
-  m_SizeDelta: {x: 121.58, y: 43.23}
+  m_AnchoredPosition: {x: -16.23, y: 1.065}
+  m_SizeDelta: {x: 116.03, y: 43.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295645531
 MonoBehaviour:
@@ -11830,7 +11838,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ecafadc9f9d914c2b8ded2dc2340e407, type: 3}
-    m_FontSize: 19
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -12307,7 +12315,6 @@ MonoBehaviour:
   maxSpace: 40
   cardSize: {x: 105, y: 152}
   cards: []
-  aciAraligi: 0
   WhichGrid: {fileID: 342853188}
 --- !u!1 &347301865
 GameObject:
@@ -12446,7 +12453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dcf0c55789ed9484182400dcf4e05984, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82e95aaae630a4f7c877c79d60f7cc38, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12892,7 +12899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 342.64, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.68, y: -0.00035476685}
+  m_AnchoredPosition: {x: 69.7, y: -0.00035476685}
   m_SizeDelta: {x: 10.38, y: 4.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &418984778
@@ -12916,7 +12923,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb1930c67e2e44988b21c0822ec41563, type: 2}
+  - {fileID: 2100000, guid: 2e279c927b297473e84f720a18dfd892, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13050,7 +13057,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3.06
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -13157,7 +13164,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.28144264, g: 1, b: 0, a: 1}
+      maxColor: {r: 0.38039216, g: 0.9843137, b: 0.32156864, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -13219,8 +13226,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 2.5
+      scalar: 2.77
+      minScalar: 1.73
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -13595,7 +13602,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 19
     angle: 29.59
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -13604,7 +13611,7 @@ ParticleSystem:
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
-    placementMode: 0
+    placementMode: 1
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
     m_MeshSpawn:
@@ -13801,7 +13808,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -13854,7 +13861,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 120
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -18502,7 +18509,7 @@ RectTransform:
   - {fileID: 1683865392}
   - {fileID: 1920724020}
   m_Father: {fileID: 144639351}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18586,7 +18593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 229.69995, y: -440}
+  m_AnchoredPosition: {x: 229.69995, y: -442.4}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517660853
@@ -18612,6 +18619,14 @@ MonoBehaviour:
   starParticleSystem: {fileID: 1587659789}
   timerImage: {fileID: 1192801684}
   timerOjbect: {fileID: 429832750}
+  _scoreText: {fileID: 1900119373}
+  leftCards: 7
+  Fx: {fileID: 418984779}
+  fxTransfrom: {fileID: 418984777}
+  particleColors:
+  - {r: 0.38039216, g: 0.9843137, b: 0.32156864, a: 1}
+  - {r: 0.94509804, g: 0.9607843, b: 0.5686275, a: 1}
+  - {r: 0.94509804, g: 0.30588236, b: 0.28235295, a: 1}
   pickFromDeck: 0
   unoClicked: 0
   choosingColor: 0
@@ -19249,7 +19264,6 @@ MonoBehaviour:
   maxSpace: 40
   cardSize: {x: 105, y: 152}
   cards: []
-  aciAraligi: 0
   WhichGrid: {fileID: 575846152}
 --- !u!1 &592944212
 GameObject:
@@ -19379,7 +19393,6 @@ MonoBehaviour:
   maxSpace: 70
   cardSize: {x: 105, y: 152}
   cards: []
-  aciAraligi: 6
   WhichGrid: {fileID: 597396390}
 --- !u!1 &606141820
 GameObject:
@@ -21052,7 +21065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -204, y: -102.1}
+  m_AnchoredPosition: {x: -201.5, y: -81.73}
   m_SizeDelta: {x: 100.85, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &753130752
@@ -21231,8 +21244,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.1, y: 1.065}
-  m_SizeDelta: {x: 47.06, y: 43.23}
+  m_AnchoredPosition: {x: 59.49, y: 1.065}
+  m_SizeDelta: {x: 35.4, y: 43.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775755728
 MonoBehaviour:
@@ -21256,7 +21269,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ecafadc9f9d914c2b8ded2dc2340e407, type: 3}
-    m_FontSize: 28
+    m_FontSize: 33
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -21267,7 +21280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 7
 --- !u!222 &775755729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21991,6 +22004,14 @@ MonoBehaviour:
   starParticleSystem: {fileID: 2020271568}
   timerImage: {fileID: 909217440}
   timerOjbect: {fileID: 2141667219}
+  _scoreText: {fileID: 1260395419}
+  leftCards: 7
+  Fx: {fileID: 1583325927}
+  fxTransfrom: {fileID: 1583325925}
+  particleColors:
+  - {r: 0.38039216, g: 0.9843137, b: 0.32156864, a: 1}
+  - {r: 0.94509804, g: 0.9607843, b: 0.5686275, a: 1}
+  - {r: 0.94509804, g: 0.30588236, b: 0.28235295, a: 1}
   pickFromDeck: 0
   unoClicked: 0
   choosingColor: 0
@@ -22272,7 +22293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1f5a1c52cc7f74ab384b507e9b770ce4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eef6006b4984f4060bb0603e57e2bdcf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22346,7 +22367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6275764, g: 0.972549, b: 0.57254905, a: 1}
+  m_Color: {r: 0.65882355, g: 1, b: 0.53333336, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -22916,7 +22937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 342.64, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.68, y: -0.00035476685}
+  m_AnchoredPosition: {x: 69.7, y: -0.00035476685}
   m_SizeDelta: {x: 10.38, y: 4.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &946832350
@@ -22940,7 +22961,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb1930c67e2e44988b21c0822ec41563, type: 2}
+  - {fileID: 2100000, guid: 2e279c927b297473e84f720a18dfd892, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23074,7 +23095,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3.06
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -23181,7 +23202,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.28144264, g: 1, b: 0, a: 1}
+      maxColor: {r: 0.38039216, g: 0.9843137, b: 0.32156864, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -23243,8 +23264,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 2.5
+      scalar: 2.77
+      minScalar: 1.73
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -23619,7 +23640,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 19
     angle: 29.59
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -23628,7 +23649,7 @@ ParticleSystem:
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
-    placementMode: 0
+    placementMode: 1
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
     m_MeshSpawn:
@@ -23825,7 +23846,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -23878,7 +23899,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 130
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -29001,7 +29022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91, y: -94.6}
+  m_AnchoredPosition: {x: 91, y: -85.3}
   m_SizeDelta: {x: 100.85, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1124850667
@@ -29730,7 +29751,6 @@ MonoBehaviour:
   maxSpace: 40
   cardSize: {x: 105, y: 152}
   cards: []
-  aciAraligi: 0
   WhichGrid: {fileID: 1208449908}
 --- !u!1 &1224012216
 GameObject:
@@ -30162,8 +30182,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.1, y: 1.065}
-  m_SizeDelta: {x: 47.06, y: 43.23}
+  m_AnchoredPosition: {x: 57.837, y: 1.065}
+  m_SizeDelta: {x: 32.095, y: 43.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260395419
 MonoBehaviour:
@@ -30187,7 +30207,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ecafadc9f9d914c2b8ded2dc2340e407, type: 3}
-    m_FontSize: 28
+    m_FontSize: 33
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -30198,7 +30218,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 7
 --- !u!222 &1260395420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30376,8 +30396,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.1, y: 1.065}
-  m_SizeDelta: {x: 47.06, y: 43.23}
+  m_AnchoredPosition: {x: 60.92, y: 1.065}
+  m_SizeDelta: {x: 38.27, y: 43.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265472786
 MonoBehaviour:
@@ -30401,7 +30421,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ecafadc9f9d914c2b8ded2dc2340e407, type: 3}
-    m_FontSize: 28
+    m_FontSize: 33
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -30412,7 +30432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 7
 --- !u!222 &1265472787
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30884,8 +30904,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.51, y: 1.3}
-  m_SizeDelta: {x: 169.7, y: 171.78}
+  m_AnchoredPosition: {x: -0.74, y: -0.09}
+  m_SizeDelta: {x: 161.84, y: 162.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1364293944
 MonoBehaviour:
@@ -36976,7 +36996,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519604160}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.93749, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36986,7 +37006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 30}
+  m_AnchoredPosition: {x: -247.8, y: 30}
   m_SizeDelta: {x: 105, y: 152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1557250036
@@ -37094,17 +37114,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583325924}
-  m_LocalRotation: {x: -0, y: -0.20816788, z: -0, w: -0.97809315}
-  m_LocalPosition: {x: 0, y: 0, z: -162.72}
+  m_LocalRotation: {x: -0, y: -0.1628091, z: 0, w: -0.98665756}
+  m_LocalPosition: {x: 0, y: 0, z: -182}
   m_LocalScale: {x: 0.05772724, y: 0.05217188, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 909217439}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 342.64, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 378.74, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.68, y: -0.00035476685}
+  m_AnchoredPosition: {x: 69.7, y: -0.00035476685}
   m_SizeDelta: {x: 10.38, y: 4.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &1583325926
@@ -37128,7 +37148,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb1930c67e2e44988b21c0822ec41563, type: 2}
+  - {fileID: 2100000, guid: 2e279c927b297473e84f720a18dfd892, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37262,7 +37282,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3.06
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -37369,7 +37389,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.28144264, g: 1, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.0990566, b: 0.12695032, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -37431,8 +37451,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 2.5
+      scalar: 2.77
+      minScalar: 1.73
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -37696,7 +37716,7 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.0006981317
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -37807,7 +37827,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 19
     angle: 29.59
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -37816,7 +37836,7 @@ ParticleSystem:
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
-    placementMode: 0
+    placementMode: 1
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
     m_MeshSpawn:
@@ -38013,7 +38033,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -38066,7 +38086,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 120
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -47268,17 +47288,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683865391}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.13172728, w: 0.991286}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 508633654}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.139}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96.16, y: -6.53}
+  m_AnchoredPosition: {x: 15, y: -99.6}
   m_SizeDelta: {x: 592.29, y: 211.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683865393
@@ -47301,10 +47321,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: UNO EXTRA
+  m_text: UNO PLUS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3b2cebfebb7ab97499912765e39bec74, type: 2}
-  m_sharedMaterial: {fileID: -5263338218149616523, guid: 3b2cebfebb7ab97499912765e39bec74,
+  m_fontAsset: {fileID: 11400000, guid: 70a6d98c6ce034e43b79bfaa3805fb06, type: 2}
+  m_sharedMaterial: {fileID: -5263338218149616523, guid: 70a6d98c6ce034e43b79bfaa3805fb06,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -47329,8 +47349,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 165.8
+  m_fontSizeBase: 165.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -47365,7 +47385,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 55.452484, y: -97.29506, z: -117.47168, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -47587,7 +47607,7 @@ GameObject:
   - component: {fileID: 1720348329}
   - component: {fileID: 1720348328}
   - component: {fileID: 1720348327}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CardDeckButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47601,13 +47621,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720348325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.93749, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 144639351}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -47773,6 +47793,14 @@ MonoBehaviour:
   starParticleSystem: {fileID: 107769522}
   timerImage: {fileID: 565289549}
   timerOjbect: {fileID: 1079100153}
+  _scoreText: {fileID: 1265472786}
+  leftCards: 7
+  Fx: {fileID: 167640389}
+  fxTransfrom: {fileID: 167640387}
+  particleColors:
+  - {r: 0.38039216, g: 0.9843137, b: 0.32156864, a: 1}
+  - {r: 0.94509804, g: 0.9607843, b: 0.5686275, a: 1}
+  - {r: 0.94509804, g: 0.30588236, b: 0.28235295, a: 1}
   pickFromDeck: 0
   unoClicked: 0
   choosingColor: 0
@@ -53135,7 +53163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61f0bf75b7ab94eddab3566c98d96d67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee03c886553514ef79fb10f38e12fb3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -53526,7 +53554,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ecafadc9f9d914c2b8ded2dc2340e407, type: 3}
-    m_FontSize: 19
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -53821,7 +53849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.1, y: 1.065}
+  m_AnchoredPosition: {x: 55.6, y: 1.065}
   m_SizeDelta: {x: 47.06, y: 43.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900119373
@@ -53846,7 +53874,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ecafadc9f9d914c2b8ded2dc2340e407, type: 3}
-    m_FontSize: 28
+    m_FontSize: 33
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -53857,7 +53885,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 7
 --- !u!222 &1900119374
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59668,8 +59696,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19, y: 1.065}
-  m_SizeDelta: {x: 121.58, y: 43.23}
+  m_AnchoredPosition: {x: -18.17, y: 1.065}
+  m_SizeDelta: {x: 119.92, y: 43.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1969572736
 MonoBehaviour:
@@ -59693,7 +59721,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ecafadc9f9d914c2b8ded2dc2340e407, type: 3}
-    m_FontSize: 19
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
