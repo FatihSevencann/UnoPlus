@@ -498,7 +498,6 @@ public class GamePlayManager : MonoBehaviour
 
         if (arrowObject.activeInHierarchy)
         {
-
             arrowObject.SetActive(false);
             CurrentPlayer.pickFromDeck = true;
             PickCardFromDeck(CurrentPlayer, true);
