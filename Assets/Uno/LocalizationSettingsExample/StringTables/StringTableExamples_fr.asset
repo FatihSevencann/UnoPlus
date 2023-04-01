@@ -22,6 +22,54 @@ MonoBehaviour:
     m_Localized: Bonjour Uno
     m_Metadata:
       m_Items: []
+  - m_Id: 10630231927808000
+    m_Localized: CARTE RESTANTE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10650676550950912
+    m_Localized: "VEUILLEZ ATTENDRE VOTRE TOUR. CE N'EST PAS VOTRE TOUR\_!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10651739031068672
+    m_Localized: "VOUS AVEZ D\xC9J\xC0 FAIT VOTRE S\xC9LECTION DE CARTE !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652330390183936
+    m_Localized: MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652721613889536
+    m_Localized: MAISON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653144865300480
+    m_Localized: QUITTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653638312583168
+    m_Localized: "est-tu s\xFBr que tu\nenvie d'arr\xEAter ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654221505388544
+    m_Localized: ' OUI'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654566340091904
+    m_Localized: NON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655207930191872
+    m_Localized: CHOISIR UNE COULEUR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655808583884800
+    m_Localized: "Vous avez perdu la partie... R\xE9essayez."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656334729961472
+    m_Localized: CONTINUER
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

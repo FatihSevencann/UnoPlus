@@ -13,9 +13,6 @@ public class PlayerCards : MonoBehaviour
     public List<Card> cards;
     private Player player;
     private float Momentum;
-    
-  
-
     public GameObject WhichGrid;
     // Kartların arasındaki açı
 

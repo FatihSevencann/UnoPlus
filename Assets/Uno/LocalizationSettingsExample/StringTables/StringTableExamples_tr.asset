@@ -22,6 +22,54 @@ MonoBehaviour:
     m_Localized: Merhaba Uno
     m_Metadata:
       m_Items: []
+  - m_Id: 10630231927808000
+    m_Localized: KALAN KARTLAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10650676550950912
+    m_Localized: "L\xDCTFEN SIRAYI BEKLEY\u0130N. SIRA SEN\u0130N DE\u011E\u0130L!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10651739031068672
+    m_Localized: "KART SE\xC7\u0130M\u0130N\u0130Z\u0130 ZATEN YAPTINIZ !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652330390183936
+    m_Localized: MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652721613889536
+    m_Localized: ANA MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653144865300480
+    m_Localized: "\xC7IKI\u015E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653638312583168
+    m_Localized: "emin misin\nb\u0131rakmak ister misin?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654221505388544
+    m_Localized: EVET
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654566340091904
+    m_Localized: HAYIR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655207930191872
+    m_Localized: "B\u0130R RENK SE\xC7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655808583884800
+    m_Localized: Oyunu Kaybettiniz... Tekrar Deneyin.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656334729961472
+    m_Localized: DEVAM ET
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

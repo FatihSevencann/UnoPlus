@@ -22,6 +22,55 @@ MonoBehaviour:
     m_Localized: Holla Uno
     m_Metadata:
       m_Items: []
+  - m_Id: 10630231927808000
+    m_Localized: KARTEN VERLASSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10650676550950912
+    m_Localized: BITTE WARTEN SIE, BIS SIE AN DER HAND SIND. SIE SIND NICHT AN DER
+      REIHE!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10651739031068672
+    m_Localized: SIE HABEN IHRE KARTENAUSWAHL BEREITS GETROFFEN !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652330390183936
+    m_Localized: DAS MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652721613889536
+    m_Localized: HEIM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653144865300480
+    m_Localized: VERLASSEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653638312583168
+    m_Localized: "sind Sie sicher, dass Sie\nwillst aufh\xF6ren?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654221505388544
+    m_Localized: JA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654566340091904
+    m_Localized: NEIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655207930191872
+    m_Localized: "W\xC4HLE EINE FARBE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655808583884800
+    m_Localized: Sie haben das Spiel verloren ... Versuchen Sie es erneut.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656334729961472
+    m_Localized: WEITERMACHEN
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

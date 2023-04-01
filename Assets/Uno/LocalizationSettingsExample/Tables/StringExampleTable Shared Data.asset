@@ -51,6 +51,10 @@ MonoBehaviour:
     m_Key: CHOOSE PROFILE PICTURE
     m_Metadata:
       m_Items: []
+  - m_Id: 10661865519570944
+    m_Key: CARDS LEFT
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

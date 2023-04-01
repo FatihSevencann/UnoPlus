@@ -22,6 +22,56 @@ MonoBehaviour:
     m_Localized: Hello Uno
     m_Metadata:
       m_Items: []
+  - m_Id: 10630231927808000
+    m_Localized: CARDS LEFT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10650676550950912
+    m_Localized: PLEASE WAIT YOUR TURN.IT'S NOT YOUR TURN !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10651739031068672
+    m_Localized: YOU HAVE ALREADY MADE YOUR CARD SELECTION !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652330390183936
+    m_Localized: MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652721613889536
+    m_Localized: HOME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653144865300480
+    m_Localized: QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653638312583168
+    m_Localized: 'are you sure you
+
+      want to quit?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654221505388544
+    m_Localized: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654566340091904
+    m_Localized: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655207930191872
+    m_Localized: CHOOSE A COLOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655808583884800
+    m_Localized: You Lost Game ...   Try Again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656334729961472
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

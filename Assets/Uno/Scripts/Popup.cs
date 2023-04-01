@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,8 +7,8 @@ using UnityEngine.Events;
 
 public class Popup : MonoBehaviour
 {
-    
-    
+
+   
     public string popupName;
     public bool isOpen;
     public bool closeOnEsc = true;
@@ -17,6 +18,14 @@ public class Popup : MonoBehaviour
     public UnityEvent onShow;
     public UnityEvent onHide;
     public static Popup currentPopup;
+    public static Popup instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        
+    }
 
     void Start()
     {
@@ -62,4 +71,6 @@ public class Popup : MonoBehaviour
                 onHide.Invoke();
         }).setIgnoreTimeScale(true);
     }
+    
+   
 }

@@ -20,6 +20,8 @@ public class GamePlayManager : MonoBehaviour
     public int UnoProbability = 70;
     [Range(0, 100)]
     public int LowercaseNameProbability = 30;
+    [SerializeField] private GameObject alreadyPickedWarning;
+    [SerializeField] private GameObject notYourTurn;
 
     public float cardDealTime = 0.05f;
     public Card _cardPrefab;
@@ -49,8 +51,9 @@ public class GamePlayManager : MonoBehaviour
     private List<Card> cards;
     private List<Card> wasteCards;
     private Player playerText;
-
-    public GameObject Human;
+    
+    
+    
     
 
 
@@ -225,20 +228,7 @@ public class GamePlayManager : MonoBehaviour
         }
     }
         
-    // public void CardRotation()
-    // {
-    //     float aciAraligi = Mathf.Clamp((maxAci - minAci) / (kartSayisi - 1), 0, 180); // Açı aralığını hesapla
-    //
-    //     for (int i = 0; i < cards.Count; i++)
-    //     {
-    //         float aci = i * aciAraligi + minAci;
-    //         aci = Mathf.Clamp(aci, -65, 65);
-    //
-    //         Vector3 pozisyon = new Vector3(Mathf.Sin(aci * Mathf.Deg2Rad), 0, Mathf.Cos(aci * Mathf.Deg2Rad)) * yaricap;
-    //         GameObject kart = Instantiate(kartPrefab, pozisyon, Quaternion.identity, transform);
-    //         kart.transform.LookAt(transform.position);
-    //     }
-    // }
+  
     Card CreateCardOnDeck(CardType t, CardValue v)
     {
      
@@ -501,6 +491,7 @@ public class GamePlayManager : MonoBehaviour
             arrowObject.SetActive(false);
             CurrentPlayer.pickFromDeck = true;
             PickCardFromDeck(CurrentPlayer, true);
+            //if yazilicak 
             if (CurrentPlayer.cardsPanel.AllowedCard.Count == 0 || (!CurrentPlayer.Timer && CurrentPlayer.isUserPlayer))
             {
                 CurrentPlayer.OnTurnEnd();
@@ -517,18 +508,40 @@ public class GamePlayManager : MonoBehaviour
             CurrentPlayer.pickFromDeck = true;
             CurrentPlayer.UpdateCardColor();
         }
+        
+        else if (CurrentPlayer.isUserPlayer && CurrentPlayer.pickFromDeck)
+        {
+            StartCoroutine(AlreadyCardPicked() );
+        }
+        else if (!CurrentPlayer.isUserPlayer && !CurrentPlayer.pickFromDeck)
+        {
+            StartCoroutine(NotYourTurn());
+        }
+    }
+    
+    IEnumerator AlreadyCardPicked()
+    {
+        alreadyPickedWarning.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        alreadyPickedWarning.SetActive(false);
+    }
+    
+    IEnumerator NotYourTurn()
+    {
+        notYourTurn.SetActive(true);
+        print("aktiff");
+        yield return new WaitForSeconds(5f);
+        notYourTurn.SetActive(false);
     }
 
     public void EnableUnoBtn()
     {
         unoBtn.GetComponent<Button>().interactable = true;
     }
-
     public void DisableUnoBtn()
     {
         unoBtn.GetComponent<Button>().interactable = false;
     }
-
     public void OnUnoClick()
     {
         DisableUnoBtn();

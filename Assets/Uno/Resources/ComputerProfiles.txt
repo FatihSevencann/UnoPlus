@@ -1,16 +1,16 @@
 {  
    "profiles":[  
       {  
-         "avatarIndex": 1,
+         "avatarIndex": 6,
          "avatarName": "Johny"
       },
       {  
-         "avatarIndex": 12,
-         "avatarName": "Jennifer"
+         "avatarIndex": 14,
+         "avatarName": "Matt"
       },
       {  
-         "avatarIndex": 3,
-         "avatarName": "Adam"
+         "avatarIndex": 0,
+         "avatarName": "Jennefer"
       }
    ]
 }

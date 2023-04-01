@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: PROFIL RESMINI SECINIZ
     m_Metadata:
       m_Items: []
+  - m_Id: 10661865519570944
+    m_Localized: KALAN KARTLAR
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

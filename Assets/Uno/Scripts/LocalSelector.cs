@@ -21,8 +21,6 @@ public class LocalSelector : MonoBehaviour
         StartCoroutine(SetLocale(localeID));
         
     }
-    
-    
     IEnumerator SetLocale(int _localeID)
     {
         active = true;

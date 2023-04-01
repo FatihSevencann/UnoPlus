@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
         xpos = fxTransfrom.transform.position;
     }
 
+  
+
     public void SetAvatarProfile(AvatarProfile p)
     {
         playerName = p.avatarName;
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour
             if (value)
             {
                 timerImage.fillAmount = 1f;
+                fxTransfrom.transform.position = xpos;
                 InvokeRepeating("UpdateTimer", 0f, .1f);
             }
             else
@@ -75,8 +78,6 @@ public class Player : MonoBehaviour
     {
         timerImage.fillAmount -= 0.07f / totalTimer;
         fxTransfrom.Translate(-0.0080f, 0f, 0f);
-
-
         if (timerImage.fillAmount <= 0)
         {
             if (choosingColor)
@@ -146,13 +147,15 @@ public class Player : MonoBehaviour
                 GamePlayManager.instance.EnableDeckClick();
             }
         }
+        
         else
         {
+            
+           
             StartCoroutine(DoComputerTurn());
         }
-
-        fxTransfrom.transform.position = xpos;
-        print("konum" + fxTransfrom.position);
+       // fxTransfrom.transform.position = xpos;
+      
     }
 
     public void UpdateCardColor()
@@ -181,6 +184,7 @@ public class Player : MonoBehaviour
                 GamePlayManager.instance.DisableUnoBtn();
             }
         }
+       
     }
 
     public void AddCard(Card c)
@@ -310,6 +314,9 @@ public class Player : MonoBehaviour
             else
                 GamePlayManager.instance.SelectColor(Random.Range(1, 5));
         }
+        
+        
+        
     }
 
     public int GetTotalPoints()

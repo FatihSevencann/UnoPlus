@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("isSound", value ? 1 : 0);
         }
     }
-
     public static bool IsFirstOpen
     {
         get

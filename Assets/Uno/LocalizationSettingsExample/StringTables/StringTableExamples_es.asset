@@ -22,6 +22,54 @@ MonoBehaviour:
     m_Localized: Hola Uno
     m_Metadata:
       m_Items: []
+  - m_Id: 10630231927808000
+    m_Localized: TARJETAS RESTANTE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10650676550950912
+    m_Localized: "POR FAVOR ESPERA TU TURNO. \xA1NO ES TU TURNO!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10651739031068672
+    m_Localized: "\xA1YA HAS HECHO TU SELECCI\xD3N DE TARJETA!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652330390183936
+    m_Localized: "MEN\xDA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10652721613889536
+    m_Localized: HOGAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653144865300480
+    m_Localized: DEJAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10653638312583168
+    m_Localized: "est\xE1s seguro de que t\xFA \n\xBFQuieres dejar de fumar?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654221505388544
+    m_Localized: "EL S\xCD"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10654566340091904
+    m_Localized: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655207930191872
+    m_Localized: ELIGE UN COLOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10655808583884800
+    m_Localized: "Has perdido el juego... Int\xE9ntalo de nuevo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656334729961472
+    m_Localized: CONTINUAR
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
