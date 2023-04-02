@@ -5585,10 +5585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1812ecd6fef8c4cbde2f965e89e20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardPanelBG: {fileID: 610732502}
-  cardsPanel: {fileID: 1208449910}
   playerName: 
   isUserPlayer: 0
+  cardsPanel: {fileID: 1208449910}
+  CardPanelBG: {fileID: 610732502}
   avatarImage: {fileID: 1045427090}
   avatarName: {fileID: 144855321}
   messageLbl: {fileID: 376093631}
@@ -6028,14 +6028,12 @@ MonoBehaviour:
   loadingView: {fileID: 224225338}
   rayCastBlocker: {fileID: 1956942825}
   cardEffectAnimator: {fileID: 543103011}
-  wildCardParticle: {fileID: 0}
   menuButton: {fileID: 525378197}
   players:
   - {fileID: 858389341}
   - {fileID: 517660853}
   - {fileID: 1751472361}
   - {fileID: 127133822}
-  multiplayerNames: {fileID: 0}
   computerProfiles: {fileID: 4900000, guid: d88b4cc1c04c8de43b4f6224a1612089, type: 3}
   clockwiseTurn: 1
   currentPlayerIndex: 0
@@ -6159,7 +6157,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 144855318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d969034569b6124d9b75fc90ddd71c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cdecb3adf7ae40d6a640454bc1dc828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lengthLimit: 15
@@ -18688,10 +18686,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1812ecd6fef8c4cbde2f965e89e20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardPanelBG: {fileID: 711634825}
-  cardsPanel: {fileID: 342853190}
   playerName: 
   isUserPlayer: 0
+  cardsPanel: {fileID: 342853190}
+  CardPanelBG: {fileID: 711634825}
   avatarImage: {fileID: 907422374}
   avatarName: {fileID: 1905941286}
   messageLbl: {fileID: 244153348}
@@ -22006,10 +22004,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1812ecd6fef8c4cbde2f965e89e20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardPanelBG: {fileID: 1027432571}
-  cardsPanel: {fileID: 597396392}
   playerName: 
   isUserPlayer: 1
+  cardsPanel: {fileID: 597396392}
+  CardPanelBG: {fileID: 1027432571}
   avatarImage: {fileID: 357249319}
   avatarName: {fileID: 0}
   messageLbl: {fileID: 1373663363}
@@ -27855,7 +27853,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 973637893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d969034569b6124d9b75fc90ddd71c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cdecb3adf7ae40d6a640454bc1dc828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lengthLimit: 15
@@ -47430,10 +47428,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1812ecd6fef8c4cbde2f965e89e20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardPanelBG: {fileID: 129262518}
-  cardsPanel: {fileID: 575846154}
   playerName: 
   isUserPlayer: 0
+  cardsPanel: {fileID: 575846154}
+  CardPanelBG: {fileID: 129262518}
   avatarImage: {fileID: 1793613468}
   avatarName: {fileID: 973637896}
   messageLbl: {fileID: 1224012219}
@@ -53773,7 +53771,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1905941283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d969034569b6124d9b75fc90ddd71c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cdecb3adf7ae40d6a640454bc1dc828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lengthLimit: 15

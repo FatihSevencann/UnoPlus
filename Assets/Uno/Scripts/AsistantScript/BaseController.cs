@@ -15,10 +15,7 @@ public class BaseController : MonoBehaviour {
 
     protected virtual void Start()
     {
-        if (JobWorker.instance.onEnterScene != null)
-        {
-            JobWorker.instance.onEnterScene(sceneName);
-        }
+        
 
 #if UNITY_WSA && !UNITY_EDITOR
         StartCoroutine(SavePrefs());
