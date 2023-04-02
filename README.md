@@ -1,5 +1,5 @@
 # Uno
- AI and Multiplayer card game
+                                                      AI and Multiplayer CARD GAME
  <img width="1000" alt="GamePlay" src="https://user-images.githubusercontent.com/118052194/229371363-b9779aa5-138a-477a-b64a-f3df191d35ff.png">
 <img width="1000" alt="HomeScene" src="https://user-images.githubusercontent.com/118052194/229371359-9a96e5e6-5d6f-4328-99c6-b4821ed293f9.png">
 <img width="1000" alt="AvatarChoosePanel" src="https://user-images.githubusercontent.com/118052194/229371368-99351d70-f4b5-4033-8631-7f79d083407d.png">
