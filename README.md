@@ -1,6 +1,8 @@
 # Uno
                                                       AI and Multiplayer CARD GAME
- https://user-images.githubusercontent.com/118052194/229371824-cea84ec7-6197-4dec-ba81-2cf17d69b3a2.mp4
+ 
+
+https://user-images.githubusercontent.com/118052194/229372176-954739da-b9d4-4554-911d-4cacf072d81c.mp4
  
  <img width="1000" alt="GamePlay" src="https://user-images.githubusercontent.com/118052194/229371363-b9779aa5-138a-477a-b64a-f3df191d35ff.png">
 <img width="1000" alt="HomeScene" src="https://user-images.githubusercontent.com/118052194/229371359-9a96e5e6-5d6f-4328-99c6-b4821ed293f9.png">
