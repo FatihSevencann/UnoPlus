@@ -370,7 +370,7 @@ public class GamePlayManager : MonoBehaviour
                 {
                     NextPlayerIndex();
                     CurrentPlayer.ShowMessage("+2");
-                    wildCardParticle.Emit(30);
+                   // wildCardParticle.Emit(30);
                     StartCoroutine(DealCardsToPlayer(CurrentPlayer, 2, .5f));
                     Invoke("NextPlayerTurn", 1.5f);
                 }
@@ -461,8 +461,8 @@ public class GamePlayManager : MonoBehaviour
         cardEffectAnimator.Play("DrawFourAnim");
         if (CurrentValue == CardValue.Wild)
         {
-            wildCardParticle.gameObject.SetActive(true);
-            wildCardParticle.Emit(30);
+           // wildCardParticle.gameObject.SetActive(true);
+          //  wildCardParticle.Emit(30);
             Invoke("NextPlayerTurn", 1.5f);
             GameManager.PlaySound(choose_color_clip);
         }

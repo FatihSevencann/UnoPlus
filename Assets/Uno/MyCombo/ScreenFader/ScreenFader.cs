@@ -13,10 +13,7 @@ public class ScreenFader : MonoBehaviour {
         instance = this;
     }
 
-    private void Start()
-    {
-        GTil.Init(this);
-    }
+   
 
     public void FadeOut(Action onComplete)
     {
@@ -37,14 +34,7 @@ public class ScreenFader : MonoBehaviour {
             if (onComplete != null) onComplete();
         });
     }
-
-    public void GotoScene(int sceneIndex)
-    {
-        FadeOut(() =>
-        {
-            CUtils.LoadScene(sceneIndex);
-        });
-    }
+    
 
     private void OnEnable()
     {

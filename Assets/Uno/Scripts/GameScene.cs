@@ -22,12 +22,8 @@ public class GameScene : MonoBehaviour
         });
     }
 
-    private void Start()
-    {
-        CUtils.ShowInterstitialAd();
-        CUtils.CloseBannerAd();
-    }
-
+  
+   
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1f)
@@ -46,11 +42,6 @@ public class GameScene : MonoBehaviour
     public void ShowMenu()
     {
         menuPopup.ShowPopup();
-
-        Timer.Schedule(this, 0.25f, () =>
-        {
-            CUtils.ShowInterstitialAd();
-        });
         GameManager.PlayButton();
     }
 
@@ -64,7 +55,7 @@ public class GameScene : MonoBehaviour
         exitPopup.ShowPopup();
         Timer.Schedule(this, 0.25f, () =>
         {
-            CUtils.ShowInterstitialAd();
+           
         });
         GameManager.PlayButton();
     }

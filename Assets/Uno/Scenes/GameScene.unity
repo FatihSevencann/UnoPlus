@@ -6028,7 +6028,7 @@ MonoBehaviour:
   loadingView: {fileID: 224225338}
   rayCastBlocker: {fileID: 1956942825}
   cardEffectAnimator: {fileID: 543103011}
-  wildCardParticle: {fileID: 1408218706}
+  wildCardParticle: {fileID: 0}
   menuButton: {fileID: 525378197}
   players:
   - {fileID: 858389341}
@@ -12203,7 +12203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f4ded2b71ce341f4aa2abcdef4c7a8d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1fd5c6789c7a45909b4e7c34b90d7ef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18469,7 +18469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac6e93038c3e08c418a058994d1b2fd2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e945d1751480d465e8f3be8b79d65b87, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -30374,7 +30374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -13.212}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.01, y: 12.21}
+  m_AnchoredPosition: {x: 0.01, y: 12.209999}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1323210078
@@ -30876,7 +30876,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 96e01c55acc3ac7418a589618626c3fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30938,7 +30938,7 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  cullingMode: 1
+  cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
@@ -36084,7 +36084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac6e93038c3e08c418a058994d1b2fd2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e945d1751480d465e8f3be8b79d65b87, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

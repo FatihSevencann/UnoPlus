@@ -1,4 +1,3 @@
-using GoogleMobileAds.Api;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,9 +36,6 @@ public class HomeScene : MonoBehaviour
             ShowProfileChooser();
         }
 
-        CUtils.ShowInterstitialAd();
-        CUtils.ShowBannerAd();
-        Timer.Schedule(this, 0.1f, AddEvents);
     }
 
     void SetupUI()
@@ -164,22 +160,7 @@ public class HomeScene : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 
-    public void OnMultiPlayerPlay()
-    {
-        if (IsAdAvailable())
-        {
-#if UNITY_EDITOR
-            HandleRewardBasedVideoRewarded(null, null);
-#else
-            AdmobController.instance.ShowRewardBasedVideo();
-#endif
-        }
-        else
-        {
-            EnterMultiplayer();
-        }
-        GameManager.PlayButton();
-    }
+ 
 
     private void EnterMultiplayer()
     {
@@ -187,20 +168,9 @@ public class HomeScene : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 
-    private void AddEvents()
-    {
-#if UNITY_ANDROID || UNITY_IOS
-        if (AdmobController.instance.rewardBasedVideo != null)
-        {
-            AdmobController.instance.rewardBasedVideo.OnAdRewarded += HandleRewardBasedVideoRewarded;
-        }
-#endif
-    }
+ 
 
-    public void HandleRewardBasedVideoRewarded(object sender, Reward args)
-    {
-        EnterMultiplayer();
-    }
+   
 
     private bool IsAdAvailable()
     {

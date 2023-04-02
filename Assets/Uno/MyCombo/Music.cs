@@ -17,22 +17,9 @@ public class Music : MonoBehaviour
         instance = this;
     }
 
-    public bool IsMuted()
-    {
-        return !IsEnabled();
-    }
+   
 
-    public bool IsEnabled()
-    {
-        return CUtils.GetBool("music_enabled", true);
-    }
-
-    public void SetEnabled(bool enabled, bool updateMusic = false)
-    {
-        CUtils.SetBool("music_enabled", enabled);
-        if (updateMusic)
-            UpdateSetting();
-    }
+  
 
     public void Play(Music.Type type)
     {
@@ -63,19 +50,13 @@ public class Music : MonoBehaviour
         audioSource.Stop();
         currentType = type;
         audioSource.clip = musicClips[(int)type];
-        if (IsEnabled())
-        {
-            audioSource.Play();
-        }
+      
         audioSource.volume = 1;
     }
 
     private void UpdateSetting()
     {
         if (audioSource == null) return;
-        if (IsEnabled())
-            Play();
-        else
-            audioSource.Stop();
+       
     }
 }
