@@ -1,5 +1,5 @@
 # Uno
-                                                      AI and Multiplayer CARD GAME
+                                                AI and Multiplayer CARD GAME
  
 
 https://user-images.githubusercontent.com/118052194/229372176-954739da-b9d4-4554-911d-4cacf072d81c.mp4
