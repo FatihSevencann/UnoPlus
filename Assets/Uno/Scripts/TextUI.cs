@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EllipsisText : MonoBehaviour
+public class TextUI : MonoBehaviour
 {
     public int lengthLimit = 15;
-
-	public void UpdateText()
+    public void UpdateText()
     {
         string text = GetComponent<Text>().text;
         if (text.Length > lengthLimit)
@@ -16,4 +13,5 @@ public class EllipsisText : MonoBehaviour
             GetComponent<Text>().text = text;
         }
     }
+    
 }

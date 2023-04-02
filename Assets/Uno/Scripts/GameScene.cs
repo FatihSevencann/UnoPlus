@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GameScene : MonoBehaviour
@@ -22,8 +20,7 @@ public class GameScene : MonoBehaviour
         });
     }
 
-  
-   
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1f)
@@ -53,10 +50,7 @@ public class GameScene : MonoBehaviour
     public void ShowExit()
     {
         exitPopup.ShowPopup();
-        Timer.Schedule(this, 0.25f, () =>
-        {
-           
-        });
+        Timer.Schedule(this, 0.25f, () => { });
         GameManager.PlayButton();
     }
 

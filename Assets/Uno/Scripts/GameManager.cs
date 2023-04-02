@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public const int TOTAL_AVATAR = 15;
     public static AudioSource audioSource;
-    public static GameMode currentGameMode = GameMode.Computer;
     public AudioClip buttonClip;
     public static AudioClip _buttonClip;
 
@@ -15,6 +14,7 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         _buttonClip = buttonClip;
     }
+ 
 
     public static void PlaySound(AudioClip clip)
     {
@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("sound File not set");
         }
+
         if (IsSound)
             audioSource.PlayOneShot(clip);
-
     }
 
     public static void PlayButton()
@@ -40,57 +40,31 @@ public class GameManager : MonoBehaviour
 
     public static bool IsSound
     {
-        get
-        {
-            return PlayerPrefs.GetInt("isSound", 1) == 1;
-        }
-        set
-        {
-            PlayerPrefs.SetInt("isSound", value ? 1 : 0);
-        }
+        get { return PlayerPrefs.GetInt("isSound", 1) == 1; }
+        set { PlayerPrefs.SetInt("isSound", value ? 1 : 0); }
     }
+
     public static bool IsFirstOpen
     {
-        get
-        {
-            return PlayerPrefs.GetInt("isFirstOpen", 1) == 1;
-        }
-        set
-        {
-            PlayerPrefs.SetInt("isFirstOpen", value ? 1 : 0);
-        }
+        get { return PlayerPrefs.GetInt("isFirstOpen", 1) == 1; }
+        set { PlayerPrefs.SetInt("isFirstOpen", value ? 1 : 0); }
     }
 
     public static string PlayerAvatarName
     {
-        get
-        {
-            return PlayerPrefs.GetString("PlayerName", "");
-        }
-        set
-        {
-            PlayerPrefs.SetString("PlayerName", value);
-        }
+        get { return PlayerPrefs.GetString("PlayerName", ""); }
+        set { PlayerPrefs.SetString("PlayerName", value); }
     }
 
     public static int PlayerAvatarIndex
     {
-        get
-        {
-            return PlayerPrefs.GetInt("PlayerAvatarIndex", 0);
-        }
-        set
-        {
-            PlayerPrefs.SetInt("PlayerAvatarIndex", value);
-        }
+        get { return PlayerPrefs.GetInt("PlayerAvatarIndex", 0); }
+        set { PlayerPrefs.SetInt("PlayerAvatarIndex", value); }
     }
 
     public static AvatarProfile PlayerAvatarProfile
     {
-        get
-        {
-            return new AvatarProfile { avatarIndex = PlayerAvatarIndex, avatarName = PlayerAvatarName };
-        }
+        get { return new AvatarProfile { avatarIndex = PlayerAvatarIndex, avatarName = PlayerAvatarName }; }
     }
 }
 
@@ -111,7 +85,6 @@ public static class ExtantionMethods
             default:
                 return new Color(1f, 1f, 1f, 1f);
         }
-
     }
 
     public static Color GetGrayColor(this CardType c)
@@ -129,7 +102,6 @@ public static class ExtantionMethods
             default:
                 return new Color(1f, 1f, 1f, 1f);
         }
-
     }
 
     public static void Shuffle<E>(this List<E> inputList)
@@ -143,11 +115,7 @@ public static class ExtantionMethods
         }
     }
 }
-public enum GameMode
-{
-    Computer,
-    MultiPlayer
-}
+
 public enum CardType
 {
     Other,
@@ -156,10 +124,22 @@ public enum CardType
     Green,
     Blue
 }
+
 public enum CardValue
 {
     Zero,
-    One, Two, Three, Four, Five, Six, Seven, Eight, Nine,
-    Skip, Reverse, DrawTwo,
-    Wild, DrawFour
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine,
+    Skip,
+    Reverse,
+    DrawTwo,
+    Wild,
+    DrawFour
 }

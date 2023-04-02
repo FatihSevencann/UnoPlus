@@ -1060,17 +1060,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAvatar1: {fileID: 929371524}
   playerAvatar2: {fileID: 357189516}
-  languageFlag: {fileID: 0}
   playerName: {fileID: 1695861429}
-  languageName: {fileID: 0}
   soundToggle: {fileID: 1720727176}
   avatarSetting: {fileID: 2042274233}
   languangeSetting: {fileID: 499181373}
   chooseAvatarPanel: {fileID: 2082728264}
-  chooseLanguagePanel: {fileID: 1768205516}
   avatarOptionPrefab: {fileID: 114210813179809168, guid: 665942a9fc5184408a54a6675c90a7b2,
-    type: 3}
-  languageOptionPrefab: {fileID: 114210813179809168, guid: 131bfdf383b3e8946a6e1cf988d82098,
     type: 3}
   playerNameInput: {fileID: 1193097404}
 --- !u!850595691 &722101663
@@ -3216,8 +3211,8 @@ GameObject:
   - component: {fileID: 1695861428}
   - component: {fileID: 1695861430}
   - component: {fileID: 1695861429}
-  - component: {fileID: 1695861431}
   - component: {fileID: 1695861432}
+  - component: {fileID: 1695861431}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -3311,10 +3306,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1695861427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d969034569b6124d9b75fc90ddd71c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cdecb3adf7ae40d6a640454bc1dc828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lengthLimit: 15
+  lengthLimit: 20
 --- !u!1 &1720727174
 GameObject:
   m_ObjectHideFlags: 0

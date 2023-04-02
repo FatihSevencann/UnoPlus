@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.Events;
-
 public class Popup : MonoBehaviour
 {
-
-   
     public string popupName;
     public bool isOpen;
     public bool closeOnEsc = true;
@@ -24,7 +17,6 @@ public class Popup : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        
     }
 
     void Start()
@@ -62,6 +54,7 @@ public class Popup : MonoBehaviour
         {
             return;
         }
+
         isOpen = false;
         currentPopup = null;
         maskImage.gameObject.SetActive(isOpen);
@@ -71,6 +64,4 @@ public class Popup : MonoBehaviour
                 onHide.Invoke();
         }).setIgnoreTimeScale(true);
     }
-    
-   
 }

@@ -7,24 +7,25 @@ using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
-    public GameObject CardPanelBG;
-    public PlayerCards cardsPanel;
     public string playerName;
     public bool isUserPlayer;
-    public Image avatarImage;
-    public Text avatarName;
-    public Text messageLbl;
+    public PlayerCards cardsPanel;
+    public GameObject CardPanelBG;
+
+    [Header("Avatar")] public Image avatarImage;
+    [SerializeField] Text avatarName, messageLbl;
     public ParticleSystem starParticleSystem;
-    public Image timerImage;
+    [Header("Timer")] public Image timerImage;
     public GameObject timerOjbect;
-    [SerializeField] private Text _scoreText;
+
+    [Header("ParticleForTimer")] [SerializeField]
+    private Text _scoreText;
+
     [SerializeField] private int leftCards = 0;
     [SerializeField] private ParticleSystem Fx;
     [SerializeField] private RectTransform fxTransfrom;
-    private Vector3 xpos;
     [SerializeField] private Color[] particleColors;
-
-
+    private Vector3 xpos;
     private float totalTimer = 15f;
     [HideInInspector] public bool pickFromDeck, unoClicked, choosingColor;
     [HideInInspector] public bool isInRoom = true;
@@ -35,11 +36,8 @@ public class Player : MonoBehaviour
         Timer = false;
         timerImage.fillAmount = 1f;
         leftCards = 0;
-       
         xpos = fxTransfrom.transform.position;
     }
-
-  
 
     public void SetAvatarProfile(AvatarProfile p)
     {
@@ -47,7 +45,7 @@ public class Player : MonoBehaviour
         if (avatarName != null)
         {
             avatarName.text = p.avatarName;
-            avatarName.GetComponent<EllipsisText>().UpdateText();
+            avatarName.GetComponent<TextUI>().UpdateText();
         }
 
         if (avatarImage != null)
@@ -74,6 +72,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    [Obsolete("Obsolete")]
     void UpdateTimer()
     {
         timerImage.fillAmount -= 0.07f / totalTimer;
@@ -147,15 +146,11 @@ public class Player : MonoBehaviour
                 GamePlayManager.instance.EnableDeckClick();
             }
         }
-        
+
         else
         {
-            
-           
             StartCoroutine(DoComputerTurn());
         }
-       // fxTransfrom.transform.position = xpos;
-      
     }
 
     public void UpdateCardColor()
@@ -184,7 +179,6 @@ public class Player : MonoBehaviour
                 GamePlayManager.instance.DisableUnoBtn();
             }
         }
-       
     }
 
     public void AddCard(Card c)
@@ -314,9 +308,6 @@ public class Player : MonoBehaviour
             else
                 GamePlayManager.instance.SelectColor(Random.Range(1, 5));
         }
-        
-        
-        
     }
 
     public int GetTotalPoints()

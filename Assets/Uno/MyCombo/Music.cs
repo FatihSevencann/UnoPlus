@@ -53,10 +53,4 @@ public class Music : MonoBehaviour
       
         audioSource.volume = 1;
     }
-
-    private void UpdateSetting()
-    {
-        if (audioSource == null) return;
-       
-    }
 }

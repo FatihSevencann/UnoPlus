@@ -70,7 +70,7 @@ public class Card : MonoBehaviour, IPointerClickHandler
             LeanTween.cancel(gameObject);
         float t = Vector2.Distance(transform.localPosition, pos) * moveSpeed / 1000f;
         LeanTween.moveLocal(gameObject, pos, t);
-      //  LeanTween.rotateLocal(gameObject, new Vector3(15f, 25f, rotZ), t);
+        LeanTween.rotateLocal(gameObject, new Vector3(15f, 25f, rotZ), t);
     }
     void Update()
     {

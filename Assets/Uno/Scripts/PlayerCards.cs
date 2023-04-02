@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using Unity.UI;
-using UnityEngine.UI;
 
 [ExecuteInEditMode]
 public class PlayerCards : MonoBehaviour
@@ -14,9 +10,6 @@ public class PlayerCards : MonoBehaviour
     private Player player;
     private float Momentum;
     public GameObject WhichGrid;
-    // Kartların arasındaki açı
-
-
     public List<Card> AllowedCard
     {
         get
@@ -61,7 +54,6 @@ public class PlayerCards : MonoBehaviour
             cards.Sort((x, y) => y.Type.CompareTo(x.Type));
         float space = 0;
         float start = 0;
-        float weight = 0;
         float heightSpace = 2;
 
 
@@ -117,6 +109,7 @@ public class PlayerCards : MonoBehaviour
                 {
                     cards[i].transform.localPosition = new Vector3(start, 0, 0f);
                 }
+
                 cards[i].transform.rotation = Quaternion.Euler(0, 0f, -Angle);
             }
 #else

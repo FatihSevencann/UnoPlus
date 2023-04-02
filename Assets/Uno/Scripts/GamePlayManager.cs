@@ -5,21 +5,16 @@ using UnityEngine.UI;
 
 public class GamePlayManager : MonoBehaviour
 {
-    [Header("Sound")]
-    public AudioClip music_win_clip;
+    [Header("Sound")] public AudioClip music_win_clip;
     public AudioClip music_loss_clip;
     public AudioClip draw_card_clip;
     public AudioClip throw_card_clip;
     public AudioClip uno_btn_clip;
     public AudioClip choose_color_clip;
 
-    [Header("Gameplay")]
-    [Range(0, 100)]
-    public int LeftRoomProbability = 10;
-    [Range(0, 100)]
-    public int UnoProbability = 70;
-    [Range(0, 100)]
-    public int LowercaseNameProbability = 30;
+    [Header("Gameplay")] [Range(0, 100)] public int LeftRoomProbability = 10;
+    [Range(0, 100)] public int UnoProbability = 70;
+    [Range(0, 100)] public int LowercaseNameProbability = 30;
     [SerializeField] private GameObject alreadyPickedWarning;
     [SerializeField] private GameObject notYourTurn;
 
@@ -31,19 +26,19 @@ public class GamePlayManager : MonoBehaviour
     public Popup colorChoose, playerChoose, noNetwork;
     public GameObject loadingView, rayCastBlocker;
     public Animator cardEffectAnimator;
-    public ParticleSystem wildCardParticle;
     public GameObject menuButton;
 
-    [Header("Player Setting")]
-    public List<Player> players;
-    public TextAsset multiplayerNames;
+    [Header("Player Setting")] public List<Player> players;
     public TextAsset computerProfiles;
     public bool clockwiseTurn = true;
     public int currentPlayerIndex = 0;
-    public Player CurrentPlayer { get { return players[currentPlayerIndex]; } }
 
-    [Header("Game Over")]
-    public GameObject gameOverPopup;
+    public Player CurrentPlayer
+    {
+        get { return players[currentPlayerIndex]; }
+    }
+
+    [Header("Game Over")] public GameObject gameOverPopup;
     public ParticleSystem starParticle;
     public List<GameObject> playerObject;
     public GameObject loseTimerAnimation;
@@ -51,18 +46,16 @@ public class GamePlayManager : MonoBehaviour
     private List<Card> cards;
     private List<Card> wasteCards;
     private Player playerText;
-    
-    
-    
-    
 
-
- 
 
     public CardType CurrentType
     {
         get { return _currentType; }
-        set { _currentType = value; cardWastePile.color = value.GetColor(); }
+        set
+        {
+            _currentType = value;
+            cardWastePile.color = value.GetColor();
+        }
     }
 
     public CardValue CurrentValue
@@ -78,26 +71,20 @@ public class GamePlayManager : MonoBehaviour
     {
         get { return arrowObject.activeSelf; }
     }
+
     public static GamePlayManager instance;
 
     System.DateTime pauseTime;
     int fastForwardTime = 0;
-    bool setup = false, multiplayerLoaded = false, gameOver = false;
+    bool setup = false, gameOver = false;
 
     void Start()
     {
         instance = this;
         Input.multiTouchEnabled = false;
-        if (GameManager.currentGameMode == GameMode.Computer)
-        {
-            SetTotalPlayer(4);
-            SetupGame();
-        }
-        else
-        {
-            StartCoroutine(CheckNetwork());
-            playerChoose.ShowPopup();
-        }
+
+        SetTotalPlayer(4);
+        SetupGame();
     }
 
     public void OnPlayerSelect(ToggleGroup group)
@@ -108,6 +95,7 @@ public class GamePlayManager : MonoBehaviour
         {
             i = int.Parse(t.name);
         }
+
         StartCoroutine(StartMultiPlayerGameMode(i));
         GameManager.PlayButton();
     }
@@ -126,8 +114,6 @@ public class GamePlayManager : MonoBehaviour
             float inTime = Random.Range(7, 5 * 60);
             StartCoroutine(RemovePlayerFromRoom(inTime));
         }
-
-        multiplayerLoaded = true;
     }
 
     void SetTotalPlayer(int totalPlayer = 4)
@@ -143,7 +129,6 @@ public class GamePlayManager : MonoBehaviour
             players[2].CardPanelBG.SetActive(true);
             players.RemoveAt(3);
             players.RemoveAt(1);
-
         }
         else if (totalPlayer == 3)
         {
@@ -152,9 +137,9 @@ public class GamePlayManager : MonoBehaviour
                 players[i].gameObject.SetActive(true);
                 players[i].CardPanelBG.SetActive(true);
             }
+
             players[3].CardPanelBG.SetActive(true);
             players.RemoveAt(3);
-
         }
         else
         {
@@ -172,37 +157,12 @@ public class GamePlayManager : MonoBehaviour
         currentPlayerIndex = Random.Range(0, players.Count);
         players[0].SetAvatarProfile(GameManager.PlayerAvatarProfile);
 
-        if (GameManager.currentGameMode == GameMode.MultiPlayer)
+        var profiles = JsonUtility.FromJson<AvatarProfiles>(computerProfiles.text).profiles;
+        for (int i = 0; i < profiles.Count; i++)
         {
-            string[] nameList = multiplayerNames.text.Split('\n');
-            List<int> indexes = new List<int>();
-
-            for (int i = 1; i < players.Count; i++)
-            {
-                while (true)
-                {
-                    int index = Random.Range(0, nameList.Length);
-                    var name = nameList[index].Trim();
-                    if (name.Length == 0) continue;
-
-                    if (!indexes.Contains(index))
-                    {
-                        indexes.Add(index);
-                        if (Random.value < LowercaseNameProbability / 100f) name = name.ToLower();
-                        players[i].SetAvatarProfile(new AvatarProfile { avatarIndex = index % GameManager.TOTAL_AVATAR, avatarName = name });
-                        break;
-                    }
-                }
-            }
+            players[i + 1].SetAvatarProfile(profiles[i]);
         }
-        else
-        {
-            var profiles = JsonUtility.FromJson<AvatarProfiles>(computerProfiles.text).profiles;
-            for(int i = 0; i < profiles.Count; i++)
-            {
-                players[i + 1].SetAvatarProfile(profiles[i]);
-            }
-        }
+
 
         CreateDeck();
         cards.Shuffle();
@@ -218,6 +178,7 @@ public class GamePlayManager : MonoBehaviour
             cards.Add(CreateCardOnDeck(CardType.Other, CardValue.Wild));
             cards.Add(CreateCardOnDeck(CardType.Other, CardValue.DrawFour));
         }
+
         for (int i = 0; i <= 12; i++)
         {
             for (int j = 1; j <= 4; j++)
@@ -227,11 +188,10 @@ public class GamePlayManager : MonoBehaviour
             }
         }
     }
-        
-  
+
+
     Card CreateCardOnDeck(CardType t, CardValue v)
     {
-     
         Card temp = Instantiate(_cardPrefab, cardDeckTransform.position, Quaternion.identity, cardDeckTransform);
         temp.Type = t;
         temp.Value = v;
@@ -262,7 +222,7 @@ public class GamePlayManager : MonoBehaviour
 
         PutCardToWastePile(cards[a]);
         cards.RemoveAt(a);
-        
+
 
         for (int i = 0; i < players.Count; i++)
         {
@@ -271,8 +231,6 @@ public class GamePlayManager : MonoBehaviour
 
         setup = true;
         CurrentPlayer.OnTurn();
-      
-
     }
 
     IEnumerator DealCardsToPlayer(Player p, int NoOfCard = 1, float delay = 0f)
@@ -300,6 +258,7 @@ public class GamePlayManager : MonoBehaviour
                 wasteCards.RemoveAt(0);
             }
         }
+
         Card temp = cards[0];
         p.AddCard(cards[0]);
         cards[0].IsOpen = p.isUserPlayer;
@@ -310,7 +269,6 @@ public class GamePlayManager : MonoBehaviour
         cards.RemoveAt(0);
         GameManager.PlaySound(throw_card_clip);
         return temp;
-
     }
 
     public void PutCardToWastePile(Card c, Player p = null)
@@ -322,6 +280,7 @@ public class GamePlayManager : MonoBehaviour
             {
                 ApplyUnoCharge(CurrentPlayer);
             }
+
             GameManager.PlaySound(draw_card_clip);
         }
 
@@ -330,7 +289,8 @@ public class GamePlayManager : MonoBehaviour
         wasteCards.Add(c);
         c.IsOpen = true;
         c.transform.SetParent(cardWastePile.transform, true);
-        c.SetTargetPosAndRot(new Vector3(Random.Range(-15f, 15f), Random.Range(-15f, 15f), 1), c.transform.localRotation.eulerAngles.z + Random.Range(-15f, 15f));
+        c.SetTargetPosAndRot(new Vector3(Random.Range(-15f, 15f), Random.Range(-15f, 15f), 1),
+            c.transform.localRotation.eulerAngles.z + Random.Range(-15f, 15f));
 
         if (p != null)
         {
@@ -339,6 +299,7 @@ public class GamePlayManager : MonoBehaviour
                 Invoke("SetupGameOver", 2f);
                 return;
             }
+
             if (c.Type == CardType.Other)
             {
                 CurrentPlayer.Timer = true;
@@ -370,7 +331,7 @@ public class GamePlayManager : MonoBehaviour
                 {
                     NextPlayerIndex();
                     CurrentPlayer.ShowMessage("+2");
-                   // wildCardParticle.Emit(30);
+                    // wildCardParticle.Emit(30);
                     StartCoroutine(DealCardsToPlayer(CurrentPlayer, 2, .5f));
                     Invoke("NextPlayerTurn", 1.5f);
                 }
@@ -389,10 +350,11 @@ public class GamePlayManager : MonoBehaviour
         if (gameOver) yield break;
 
         List<int> indexes = new List<int>();
-        for(int i = 1; i < players.Count; i++)
+        for (int i = 1; i < players.Count; i++)
         {
             indexes.Add(i);
         }
+
         indexes.Shuffle();
 
         int index = -1;
@@ -461,8 +423,6 @@ public class GamePlayManager : MonoBehaviour
         cardEffectAnimator.Play("DrawFourAnim");
         if (CurrentValue == CardValue.Wild)
         {
-           // wildCardParticle.gameObject.SetActive(true);
-          //  wildCardParticle.Emit(30);
             Invoke("NextPlayerTurn", 1.5f);
             GameManager.PlaySound(choose_color_clip);
         }
@@ -483,7 +443,6 @@ public class GamePlayManager : MonoBehaviour
 
     public void OnDeckClick()
     {
-        
         if (!setup) return;
 
         if (arrowObject.activeInHierarchy)
@@ -508,24 +467,24 @@ public class GamePlayManager : MonoBehaviour
             CurrentPlayer.pickFromDeck = true;
             CurrentPlayer.UpdateCardColor();
         }
-        
+
         else if (CurrentPlayer.isUserPlayer && CurrentPlayer.pickFromDeck)
         {
-            StartCoroutine(AlreadyCardPicked() );
+            StartCoroutine(AlreadyCardPicked());
         }
         else if (!CurrentPlayer.isUserPlayer && !CurrentPlayer.pickFromDeck)
         {
             StartCoroutine(NotYourTurn());
         }
     }
-    
+
     IEnumerator AlreadyCardPicked()
     {
         alreadyPickedWarning.SetActive(true);
         yield return new WaitForSeconds(5f);
         alreadyPickedWarning.SetActive(false);
     }
-    
+
     IEnumerator NotYourTurn()
     {
         notYourTurn.SetActive(true);
@@ -538,10 +497,12 @@ public class GamePlayManager : MonoBehaviour
     {
         unoBtn.GetComponent<Button>().interactable = true;
     }
+
     public void DisableUnoBtn()
     {
         unoBtn.GetComponent<Button>().interactable = false;
     }
+
     public void OnUnoClick()
     {
         DisableUnoBtn();
@@ -560,7 +521,7 @@ public class GamePlayManager : MonoBehaviour
     public void SetupGameOver()
     {
         gameOver = true;
-        for(int i = players.Count - 1; i >= 0; i--)
+        for (int i = players.Count - 1; i >= 0; i--)
         {
             if (!players[i].isInRoom)
             {
@@ -575,7 +536,6 @@ public class GamePlayManager : MonoBehaviour
             playerObject[2].transform.GetChild(2).GetComponent<Text>().text = "2nd Place";
             playerObject.RemoveAt(3);
             playerObject.RemoveAt(1);
-
         }
         else if (players.Count == 3)
         {
@@ -584,8 +544,8 @@ public class GamePlayManager : MonoBehaviour
             {
                 playerObject[i].SetActive(true);
             }
-            playerObject[2].transform.GetChild(2).GetComponent<Text>().text = "3rd Place";
 
+            playerObject[2].transform.GetChild(2).GetComponent<Text>().text = "3rd Place";
         }
         else
         {
@@ -605,14 +565,14 @@ public class GamePlayManager : MonoBehaviour
         {
             var playerNameText = playerObject[i].GetComponentInChildren<Text>();
             playerNameText.text = players[i].playerName;
-            playerNameText.GetComponent<EllipsisText>().UpdateText();
+            playerNameText.GetComponent<TextUI>().UpdateText();
             playerObject[i].GetComponentsInChildren<Image>()[1].sprite = players[i].avatarImage.sprite;
         }
 
         GameManager.PlaySound(winner.isUserPlayer ? music_win_clip : music_loss_clip);
         gameOverPopup.SetActive(true);
 
-        for(int i = 1; i < players.Count; i++)
+        for (int i = 1; i < players.Count; i++)
         {
             if (players[i].isUserPlayer)
             {
@@ -623,40 +583,12 @@ public class GamePlayManager : MonoBehaviour
         }
 
         gameOverPopup.GetComponent<Animator>().enabled = winner.isUserPlayer;
-        gameOverPopup.GetComponentInChildren<Text>().text = winner.isUserPlayer ? "You win Game." : "You Lost Game ...   Try Again.";
+        gameOverPopup.GetComponentInChildren<Text>().text =
+            winner.isUserPlayer ? "You win Game." : "You Lost Game ...   Try Again.";
         fastForwardTime = 0;
     }
 
-    IEnumerator CheckNetwork()
-    {
-        while (true)
-        {
-            WWW www = new WWW("https://www.google.com");
-            yield return www;
-            if (string.IsNullOrEmpty(www.error))
-            {
-                if (noNetwork.isOpen)
-                {
-                    noNetwork.HidePopup();
 
-                    Time.timeScale = 1;
-                    OnApplicationPause(false);
-                }
-            }
-            else
-            {
-                if (Time.timeScale == 1)
-                {
-                    noNetwork.ShowPopup();
-
-                    Time.timeScale = 0;
-                    pauseTime = System.DateTime.Now;
-                }
-            }
-
-            yield return new WaitForSecondsRealtime(1f);
-        }
-    }
 
     void OnApplicationPause(bool pauseStatus)
     {
@@ -664,18 +596,8 @@ public class GamePlayManager : MonoBehaviour
         {
             pauseTime = System.DateTime.Now;
         }
-        else
-        {
-            if (GameManager.currentGameMode == GameMode.MultiPlayer && multiplayerLoaded && !gameOver)
-            {
-                fastForwardTime += Mathf.Clamp((int)(System.DateTime.Now - pauseTime).TotalSeconds, 0, 3600);
-                if (Time.timeScale == 1f)
-                {
-                    StartCoroutine(DoFastForward());
-                }
-            }
-        }
     }
+
 
     IEnumerator DoFastForward()
     {
@@ -686,9 +608,9 @@ public class GamePlayManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             fastForwardTime--;
         }
+
         Time.timeScale = 1f;
         rayCastBlocker.SetActive(false);
-
     }
 }
 

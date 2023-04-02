@@ -1,30 +1,22 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HomeScene : MonoBehaviour
 {
-    [Header("Mainscreen")]
-    public Image playerAvatar1;
-    public Image playerAvatar2;
-    [SerializeField] private Image languageFlag;
+    [Header("Mainscreen")] public Image playerAvatar1, playerAvatar2;
     public Text playerName;
-    [SerializeField] private Text languageName;
     public Toggle soundToggle;
-    [Header("AvatarSetting")]
-    public GameObject avatarSetting;
 
-    public GameObject languangeSetting;
-    public Transform chooseAvatarPanel;
-    [SerializeField] private Transform chooseLanguagePanel;
+
+    [Header("AvatarSetting")] [SerializeField]
+    GameObject avatarSetting, languangeSetting;
+
+    [SerializeField] Transform chooseAvatarPanel;
     public Toggle avatarOptionPrefab;
-    [SerializeField] private Toggle languageOptionPrefab;
     public InputField playerNameInput;
+    private List<Toggle> toggleList, toggleLanguage;
 
-    private List<Toggle> toggleList;
-    private List<Toggle> toggleLanguage;
-    
 
     void Start()
     {
@@ -35,20 +27,17 @@ public class HomeScene : MonoBehaviour
         {
             ShowProfileChooser();
         }
-
     }
 
     void SetupUI()
     {
         soundToggle.isOn = GameManager.IsSound;
-        
         soundToggle.onValueChanged.RemoveAllListeners();
         soundToggle.onValueChanged.AddListener((arg0) =>
         {
             GameManager.PlayButton();
             GameManager.IsSound = arg0;
             soundToggle.gameObject.SetActive(arg0);
-            
         });
 
         toggleList = new List<Toggle>();
@@ -68,8 +57,10 @@ public class HomeScene : MonoBehaviour
             });
             toggleList.Add(temp);
         }
+
         UpdateUI();
     }
+
     void SetupLanguageSettings()
     {
         soundToggle.isOn = GameManager.IsSound;
@@ -79,27 +70,7 @@ public class HomeScene : MonoBehaviour
         {
             GameManager.PlayButton();
             GameManager.IsSound = arg0;
-            
         });
-
-        // toggleLanguage = new List<Toggle>();
-        // for (int i = 0; i < GameManager.TOTAL_LANGUAGE; i++)
-        // {
-        //     Toggle temp = Instantiate<Toggle>(languageOptionPrefab, chooseLanguagePanel);
-        //     temp.group = chooseLanguagePanel.GetComponent<ToggleGroup>();
-        //     temp.GetComponentsInChildren<Image>()[2].sprite = Resources.Load<Sprite>("Flags/" + i);
-        //     int index = i;
-        //     temp.onValueChanged.AddListener((arg0) =>
-        //     {
-        //         if (arg0)
-        //         {
-        //             GameManager.LanguageIndex = index;
-        //             UpdateLanguage();
-        //         }
-        //     });
-        //     toggleLanguage.Add(temp);
-        // }
-        //UpdateLanguage();
     }
 
     void UpdateUI()
@@ -107,21 +78,16 @@ public class HomeScene : MonoBehaviour
         playerAvatar1.sprite = Resources.Load<Sprite>("Avatar/" + GameManager.PlayerAvatarIndex);
         playerAvatar2.sprite = Resources.Load<Sprite>("Avatar/" + GameManager.PlayerAvatarIndex);
         playerName.text = GameManager.PlayerAvatarName;
-        playerName.GetComponent<EllipsisText>().UpdateText();
-
+        playerName.GetComponent<TextUI>().UpdateText();
     }
 
-    // void UpdateLanguage()
-    // {
-    //     languageFlag.sprite = Resources.Load<Sprite>("Flags/" + GameManager.LanguageIndex);
-    //     languageName.text = GameManager.LanguageName;
-    // }
     public void ShowProfileChooser()
     {
         avatarSetting.SetActive(true);
         playerNameInput.text = GameManager.PlayerAvatarName;
         toggleList[GameManager.PlayerAvatarIndex].isOn = true;
     }
+
     public void ShowLanguagesChooser()
     {
         languangeSetting.SetActive(true);
@@ -149,53 +115,12 @@ public class HomeScene : MonoBehaviour
     {
         GameManager.IsFirstOpen = false;
         languangeSetting.SetActive(false);
-        //UpdateLanguage();
         GameManager.PlayButton();
     }
 
     public void OnComputerPlay()
     {
-        GameManager.currentGameMode = GameMode.Computer;
         GameManager.PlayButton();
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
-    }
-
- 
-
-    private void EnterMultiplayer()
-    {
-        GameManager.currentGameMode = GameMode.MultiPlayer;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
-    }
-
- 
-
-   
-
-    private bool IsAdAvailable()
-    {
-#if UNITY_ANDROID || UNITY_IOS
-        return AdmobController.instance.rewardBasedVideo.IsLoaded();
-#else
-        return false;
-#endif
-    }
-
-    private void OnDestroy()
-    {
-#if UNITY_ANDROID || UNITY_IOS
-        if (AdmobController.instance.rewardBasedVideo != null)
-        {
-            AdmobController.instance.rewardBasedVideo.OnAdRewarded -= HandleRewardBasedVideoRewarded;
-        }
-#endif
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
 }
