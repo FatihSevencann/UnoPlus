@@ -55,6 +55,10 @@ MonoBehaviour:
     m_Key: CARDS LEFT
     m_Metadata:
       m_Items: []
+  - m_Id: 10678517296521216
+    m_Key: COMING SOON
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

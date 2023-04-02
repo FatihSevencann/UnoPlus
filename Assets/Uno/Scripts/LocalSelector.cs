@@ -28,4 +28,6 @@ public class LocalSelector : MonoBehaviour
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_localeID];
         active = false;
     }
+    
+  
 }

@@ -58,6 +58,10 @@ MonoBehaviour:
     m_Localized: CARTE RESTANTE
     m_Metadata:
       m_Items: []
+  - m_Id: 10678517296521216
+    m_Localized: "\xC0 VENIR"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

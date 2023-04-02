@@ -58,6 +58,10 @@ MonoBehaviour:
     m_Localized: KALAN KARTLAR
     m_Metadata:
       m_Items: []
+  - m_Id: 10678517296521216
+    m_Localized: YAKINDA GELECEK
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

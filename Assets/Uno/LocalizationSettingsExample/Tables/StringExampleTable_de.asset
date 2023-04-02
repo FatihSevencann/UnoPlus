@@ -58,6 +58,10 @@ MonoBehaviour:
     m_Localized: KARTEN VERLASSEN
     m_Metadata:
       m_Items: []
+  - m_Id: 10678517296521216
+    m_Localized: "DEMN\xC4CHST"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

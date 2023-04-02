@@ -1150,6 +1150,7 @@ GameObject:
   - component: {fileID: 726272110}
   - component: {fileID: 726272109}
   - component: {fileID: 726272111}
+  - component: {fileID: 726272112}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1354,6 +1355,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMaster: {fileID: 113708, guid: bfbb5352b36db73418bff6eeac290ae6, type: 3}
   sceneName: Home
+--- !u!114 &726272112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726272104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c866ed9fe0a5a4c7fa31a0a05a503fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &747646365
 GameObject:
   m_ObjectHideFlags: 0
@@ -4884,9 +4897,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689146892}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnMultiPlayerPlay
+      - m_Target: {fileID: 726272112}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: MultiplayerScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
